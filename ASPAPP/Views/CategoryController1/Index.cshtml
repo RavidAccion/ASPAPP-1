@@ -5,6 +5,14 @@
 
 <h1>Category</h1>
 
+<div class=row pt-4 pb-4>
+    <div class="col-12 text-end pb-3">
+        <a asp-controller="CategoryController1" asp-action="Create" class="btn btn-primary">Create New</a>
+   
+
+    </div>
+</div>
+
 <table class="table table-bordered tabletable-striped" style="width:100%">
     <thead>
         <tr>
@@ -14,6 +22,7 @@
             <th>
                 Order
             </th>
+            <th style="width:150px">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +34,12 @@
                 </td>
                 <td>
                     @obj.DisplayOrder
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="button">
+                        <a class="btn btn-primary mx-2" asp-controller="CategoryController1" asp-action="Edit" asp-route-id="@obj.Id"> Edit</a>
+                        <a class="btn btn-primary mx-2" asp-controller="CategoryController1" asp-action="Delete" asp-route-id="@obj.Id"> Delete</a>
+                    </div>
                 </td>
             </tr>
         }
